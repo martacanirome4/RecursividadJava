@@ -1,4 +1,4 @@
-package dominio;
+package mates;
 
 public class Mates {
 
@@ -31,42 +31,26 @@ public class Mates {
         /** array de enteros int[][], int i sera el tamaño o el indice o algo asi
          * el array lo creo en la funcion principal que va a invocar a la funcion y devolver el resultado **/
         if (T.length == 0) {
-            return 0
-        } ;
+            return 0;
+        }
         else{
-            return T[T.length - 1] + suma(T, T.length - 2)
-        } ;
+            return T[T.length - 1] + suma(T, T.length - 2);
+        }
         /**
          * podria ser solo: return sumaMem(T, T.length(), 0);
          * para array el metodo es length() y para arraylist es size() (ver diferencias)**/
     }
-    // Ejercicio 5: la media aritmética de una lista de números
-    public static int mediaAritmética (int[]T) {
-        if (T.length == 0) {
-            return 0
-        } ;
-        else{
-            return T[T.length - 1] + suma1(T, T.length - 2)
-        } ;
 
     public static int suma (int[]T, int i) {
-        if (i == 0) { return T[0] };
+        if (i == 0) {
+            return T[0];
+        }
         else {
-            return T[i] + suma(T, i-1) };
+            return T[i] + suma(T, i-1) ;
+        }
     }
     /** Tecnica de parametros acumuladores: la ventaja es que esta no se expande, la funcion suma() sí
      * otra forma de resolver el problema, vamos guardando la informacion de la suma de los elementos que llevamos**/
-    public static int sumaMem (int[]T, int i, int s) {
-        // tengo que sumar todos los elementos hasta i sabiendo que la suma de los que ya llevamos es s
-        if (i == -1) {
-            // es que ya he sumado todos hasta el 0,y la suma la tengo en s
-            return s;
-        }
-        else {
-            sumaMem(T. i-1, S+T[i]);
-        }
-    }
     // Calcular la desviación típica de una lista de números
-    public static
 
 }
