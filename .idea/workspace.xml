@@ -7,7 +7,7 @@
     <list default="true" id="1c761389-049b-42a0-b699-296d4e746414" name="Changes" comment="Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/aplicacion/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aplicacion/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/mates/Mates.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/mates/Mates.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/mates/Mates.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aplicacion/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aplicacion/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mates/Mates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mates/Mates.java" afterDir="false" />
     </list>
@@ -74,7 +74,7 @@
       <workItem from="1676360551163" duration="575000" />
       <workItem from="1676540614770" duration="7000" />
       <workItem from="1676554551200" duration="166000" />
-      <workItem from="1676812553675" duration="6876000" />
+      <workItem from="1676812553675" duration="8342000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1675796946543</created>

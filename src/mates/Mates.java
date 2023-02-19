@@ -53,22 +53,7 @@ public class Mates {
      * @param T - array de enteros
      * @return - la suma de los elementos del array
      */
-    public static int suma (int[]T) {
-        if (T.length == 0) {
-            return 0;
-        }
-        else{
-            return T[T.length - 1] + suma(T, T.length - 2);
-        }
-    }
-    public static int suma (int[]T, int i) {
-        if (i == 0) {
-            return T[0];
-        }
-        else {
-            return T[i] + suma(T, i-1) ;
-        }
-    }
+
 
 
     /**
@@ -113,13 +98,13 @@ public class Mates {
      * @param n - número entero mayor o igual que 2
      * @return - la suma de los números pares de 0 a n
      */
-    public static int recursiveEvenSum(int n) {
+    public static int recursiveEvenSumN(int n) {
         if (n < 2) {
             return 0;
         } else if (n == 2) {
             return 2;
         } else {
-            int sum = recursiveEvenSum(n - 2);
+            int sum = recursiveEvenSumN(n - 2);
             return n % 2 == 0 ? sum + n : sum;
         }
     }
@@ -130,13 +115,14 @@ public class Mates {
      * @param numbers - lista de enteros
      * @return - la suma de los números pares de la lista
      */
-    public static int recursiveEvenSum(List<Integer> numbers) {
-        if (numbers.isEmpty()) {
+    public static int recursiveEvenSumList(List<Integer> numbers) {
+        if (numbers.size() == 0) {
             return 0;
-        } else {
+        }
+        else {
             int lastNumber = numbers.get(numbers.size() - 1);
             List<Integer> remainingNumbers = numbers.subList(0, numbers.size() - 1);
-            int sum = recursiveEvenSum(remainingNumbers);
+            int sum = recursiveEvenSumList(remainingNumbers);
             return lastNumber % 2 == 0 ? sum + lastNumber : sum;
         }
     }
@@ -148,8 +134,9 @@ public class Mates {
      * @return - la lista de los números pares de la lista
      */
     public static List<Integer> recursiveEvenList(List<Integer> numbers) {
-        if (numbers.isEmpty()) {
-            return new ArrayList<Integer>();
+        if (numbers.size() == 0) {
+            List<Integer> sol = Arrays.asList(0);
+            return sol;
         } else {
             int lastNumber = numbers.get(numbers.size() - 1);
             List<Integer> remainingNumbers = numbers.subList(0, numbers.size() - 1);
@@ -167,11 +154,12 @@ public class Mates {
      * @param n - número entero mayor o igual que 2
      * @return - la lista de los números pares de 0 a n
      */
-    public static List<Integer> recursiveEvenList(int n) {
+    public static List<Integer> recursiveEvenListN(int n) {
         if (n < 2) {
-            return new ArrayList<Integer>();
+            List<Integer> sol = Arrays.asList(0);
+            return sol;
         } else {
-            List<Integer> evenList = recursiveEvenList(n - 2);
+            List<Integer> evenList = recursiveEvenListN(n - 2);
             if (n % 2 == 0) {
                 evenList.add(n);
             }
