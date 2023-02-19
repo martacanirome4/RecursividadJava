@@ -50,10 +50,9 @@ public class Mates {
 
     /**
      * Calcula la suma de los elementos de un array de enteros
-     * @param T - array de enteros
+     * @param arr - array de enteros
      * @return - la suma de los elementos del array
      */
-
 
 
     /**
@@ -98,14 +97,15 @@ public class Mates {
      * @param n - número entero mayor o igual que 2
      * @return - la suma de los números pares de 0 a n
      */
-    public static int recursiveEvenSumN(int n) {
-        if (n < 2) {
-            return 0;
-        } else if (n == 2) {
+    public static int sumEven(int n) {
+        if (n < 2) { // base case
+            throw new IllegalArgumentException("El número debe ser mayor o igual que 2.");
+        } else if (n == 2) { // base case
             return 2;
-        } else {
-            int sum = recursiveEvenSumN(n - 2);
-            return n % 2 == 0 ? sum + n : sum;
+        } else if (n % 2 == 0) { // even number
+            return n + sumEven(n - 2); // recursive call with n-2
+        } else { // odd number
+            return sumEven(n - 1); // recursive call with n-1
         }
     }
 
@@ -133,20 +133,27 @@ public class Mates {
      * @param numbers - lista de enteros
      * @return - la lista de los números pares de la lista
      */
-    public static List<Integer> recursiveEvenList(List<Integer> numbers) {
-        if (numbers.size() == 0) {
-            List<Integer> sol = Arrays.asList(0);
-            return sol;
+    public static List<Integer> getEvenNumbers(List<Integer> list) {
+        if (list.size() < 2) {
+            throw new IllegalArgumentException("La lista debe contener al menos 2 elementos.");
+        } else if (list.size() == 2) { // caso base
+            if (list.get(0) % 2 == 0) {
+                List<Integer> sol = Arrays.asList(0);
+                return sol;
+            } else {
+                List<Integer> sol = Arrays.asList();
+                return sol;
+            }
         } else {
-            int lastNumber = numbers.get(numbers.size() - 1);
-            List<Integer> remainingNumbers = numbers.subList(0, numbers.size() - 1);
-            List<Integer> evenList = recursiveEvenList(remainingNumbers);
-            if (lastNumber % 2 == 0) {
-                evenList.add(lastNumber);
+            List<Integer> evenList = getEvenNumbers(list.subList(0, list.size() - 1));
+            int lastElement = list.get(list.size() - 1);
+            if (lastElement % 2 == 0) {
+                evenList.add(lastElement);
             }
             return evenList;
         }
     }
+
 
 
     /**
@@ -199,7 +206,6 @@ public class Mates {
             return (fibonacciQuotient(n - 1) + fibonacciQuotient(n - 2)) / fibonacciQuotient(n - 3);
         }
     }
-
     /**
      * La proporción áurea es una constante matemática que es aproximadamente igual a 1.61803398875, el valor obtenido
      * de la división de 1+(raiz cuadrada de)5 / 2.
@@ -211,6 +217,4 @@ public class Mates {
      * con el valor de la proporción áurea, podemos calcular los números de Fibonacci 13 y 12 y dividirlos para obtener
      * el valor real de la proporción. Entonces podemos comparar este valor con el valor de la proporción áurea.
      */
-
-
 }
