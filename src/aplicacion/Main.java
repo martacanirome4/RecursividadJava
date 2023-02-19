@@ -1,4 +1,4 @@
-package dominio;
+package aplicacion;
         // siempre primera linea el package con el nombre del fichero que lo contiene
         public class Main {
             // clase siempre mismo nombre que archivo, clase primera mayuscula resto minuscula
