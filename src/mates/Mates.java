@@ -5,12 +5,13 @@ import static java.lang.Math.*;
 
 public class Mates {
 
-    /**
+    /** 1
      *
      * @param n - número entero
      * @return - la suma de los números de 0 a n
      */
     public static int sumN (int n) {
+        // Elevar una excepción cuando haya una entrada no válida
         if (n<0) {
             throw new IllegalArgumentException("El número debe ser mayor o igual que 0.");
         }
@@ -22,7 +23,7 @@ public class Mates {
     }
 
 
-    /**
+    /** 2
      * Calcula el factorial de un número entero
      * @param n - número entero
      * @return - el factorial de n
@@ -39,7 +40,7 @@ public class Mates {
     }
 
 
-    /**
+    /** 3
      * Calcula la potencia de un número entero
      * @param n - número entero
      * @param p - potencia
@@ -57,7 +58,7 @@ public class Mates {
     }
 
 
-    /**
+    /** 4
      * Calcula la media de los elementos de una lista de enteros
      * @param numbers - lista de enteros
      * @return - la media de los elementos de la lista
@@ -74,7 +75,7 @@ public class Mates {
     }
 
 
-    /**
+    /** 5
      * Calcula la desviación típica de una lista de enteros
      * @param numbers - lista de enteros
      * @return - la desviación típica de la lista
@@ -93,7 +94,7 @@ public class Mates {
     }
 
 
-    /**
+    /** 6
      * Calcula la suma de los números pares de 0 a n
      * @param n - número entero mayor o igual que 2
      * @return - la suma de los números pares de 0 a n
@@ -111,7 +112,7 @@ public class Mates {
     }
 
 
-    /**
+    /** 7
      * Calcula la suma de los números pares de una lista de enteros
      * @param numbers - lista de enteros
      * @return - la suma de los números pares de la lista
@@ -129,7 +130,7 @@ public class Mates {
     }
 
 
-    /**
+    /** 8
      * Obtiene la lista de los números pares de una lista de enteros
      * @param numbers - lista de enteros
      * @return - la lista de los números pares de la lista
@@ -157,7 +158,7 @@ public class Mates {
 
 
 
-    /**
+    /** 9
      * Obtiene la lista de los números pares de 0 a n
      * @param n - número entero mayor o igual que 2
      * @return - la lista de los números pares de 0 a n
@@ -175,7 +176,7 @@ public class Mates {
     }
 
 
-    /**
+    /** 10
      * Calcula el producto escalar de dos vectores
      * @param list1 - lista de enteros
      * @param list2 - lista de enteros
@@ -197,7 +198,7 @@ public class Mates {
     }
 
 
-    /**
+    /** 11
      * Calcula el cociente entre el elemento n y el elemento n-1 de la sucesión de Fibonacci
      * @param n - número entero
      * @return - el cociente entre el elemento n y el elemento n-1 de la sucesión de Fibonacci
