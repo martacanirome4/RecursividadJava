@@ -11,6 +11,9 @@ public class Mates {
      * @return - la suma de los números de 0 a n
      */
     public static int sumN (int n) {
+        if (n<0) {
+            throw new IllegalArgumentException("El número debe ser mayor o igual que 0.");
+        }
         if (n == 0) {
             return 0;
         } else {
@@ -25,6 +28,9 @@ public class Mates {
      * @return - el factorial de n
      */
     public static int factorial (int n) {
+        if (n<0) {
+            throw new IllegalArgumentException("El número debe ser mayor o igual que 0.");
+        }
         if (n == 0) {
             return 1;
         } else {
@@ -40,6 +46,9 @@ public class Mates {
      * @return - el resultado de elevar n a la p, le pasaremos como valor también n
      */
     public static int potencia (int n, int p) {
+        if (n<0) {
+            throw new IllegalArgumentException("El número debe ser mayor o igual que 0.");
+        }
         if (p == 0) {
             return 1;
         } else {
@@ -49,20 +58,13 @@ public class Mates {
 
 
     /**
-     * Calcula la suma de los elementos de un array de enteros
-     * @param arr - array de enteros
-     * @return - la suma de los elementos del array
-     */
-
-
-    /**
      * Calcula la media de los elementos de una lista de enteros
      * @param numbers - lista de enteros
      * @return - la media de los elementos de la lista
      */
     public static double recursiveAverage(List<Integer> numbers) {
         if (numbers.isEmpty()) {
-            return 0;
+            throw new IllegalArgumentException("La lista no puede estar vacía");
         } else if (numbers.size() == 1) {
             return numbers.get(0);
         } else {
@@ -79,9 +81,8 @@ public class Mates {
      */
     public static double recursiveStandardDeviation(List<Integer> numbers) {
         double average = recursiveAverage(numbers);
-
         if (numbers.size() <= 1) {
-            return 0;
+            throw new IllegalArgumentException("La lista debe contener al menos dos elementos");
         } else {
             double variance = numbers.stream()
                     .mapToDouble(num -> Math.pow(num - average, 2))
@@ -117,7 +118,7 @@ public class Mates {
      */
     public static int recursiveEvenSumList(List<Integer> numbers) {
         if (numbers.size() == 0) {
-            return 0;
+            throw new IllegalArgumentException("La lista no puede estar vacía");
         }
         else {
             int lastNumber = numbers.get(numbers.size() - 1);
@@ -163,8 +164,7 @@ public class Mates {
      */
     public static List<Integer> recursiveEvenListN(int n) {
         if (n < 2) {
-            List<Integer> sol = Arrays.asList(0);
-            return sol;
+            throw new IllegalArgumentException("La lista no puede estar vacía");
         } else {
             List<Integer> evenList = recursiveEvenListN(n - 2);
             if (n % 2 == 0) {
@@ -185,6 +185,9 @@ public class Mates {
         return calculateDotProductRecursive(list1, list2, 0, 0, 0);
     }
     public static int calculateDotProductRecursive(List<Integer> list1, List<Integer> list2, int index, int product, int sum) {
+        if (list1.size() != list2.size()) {
+            throw new IllegalArgumentException("Las listas deben tener el mismo tamaño");
+        }
         if (index == list1.size()) {
             return sum;
         }
