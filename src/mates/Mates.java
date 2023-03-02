@@ -10,15 +10,13 @@ public class Mates {
      * @param n - número entero
      * @return - la suma de los números de 0 a n
      */
-    public static int sumN (int n) {
+    public static int sumaN (int n) {
         // Elevar una excepción cuando haya una entrada no válida
-        if (n<0) {
-            throw new IllegalArgumentException("El número debe ser mayor o igual que 0.");
-        }
+
         if (n == 0) {
             return 0;
         } else {
-            return n + sumN(n - 1);
+            return n + sumaN(n - 1);
         }
     }
 
@@ -29,9 +27,6 @@ public class Mates {
      * @return - el factorial de n
      */
     public static int factorial (int n) {
-        if (n<0) {
-            throw new IllegalArgumentException("El número debe ser mayor o igual que 0.");
-        }
         if (n == 0) {
             return 1;
         } else {
@@ -47,9 +42,7 @@ public class Mates {
      * @return - el resultado de elevar n a la p, le pasaremos como valor también n
      */
     public static int potencia (int n, int p) {
-        if (n<0) {
-            throw new IllegalArgumentException("El número debe ser mayor o igual que 0.");
-        }
+
         if (p == 0) {
             return 1;
         } else {
@@ -59,50 +52,60 @@ public class Mates {
 
 
     /** 4
-     * Calcula la media de los elementos de una lista de enteros
+     * Calcula la suma de los elementos de una lista de numeros
      * @param numbers - lista de enteros
-     * @return - la media de los elementos de la lista
+     * @return sum - la suma de los elementos de la lista
      */
-    public static double recursiveAverage(List<Integer> numbers) {
-        if (numbers.isEmpty()) {
+    public static int sumList (List<Integer> numbers) {
+        if (numbers.size() == 0) {
             throw new IllegalArgumentException("La lista no puede estar vacía");
-        } else if (numbers.size() == 1) {
-            return numbers.get(0);
-        } else {
-            int sum = numbers.stream().mapToInt(Integer::intValue).sum();
-            return sum / (double) numbers.size();
+        }
+        else {
+            int lastNumber = numbers.get(numbers.size() - 1);
+            List<Integer> remainingNumbers = numbers.subList(0, numbers.size() - 1);
+            int sum = sumList(remainingNumbers);
+            return sum + lastNumber;
         }
     }
 
 
     /** 5
-     * Calcula la desviación típica de una lista de enteros
+     * Calcula la media de los elementos de una lista de enteros
      * @param numbers - lista de enteros
-     * @return - la desviación típica de la lista
+     * @return suma - la media de los elementos de la lista
      */
-    public static double recursiveStandardDeviation(List<Integer> numbers) {
-        double average = recursiveAverage(numbers);
-        if (numbers.size() <= 1) {
-            throw new IllegalArgumentException("La lista debe contener al menos dos elementos");
-        } else {
-            double variance = numbers.stream()
-                    .mapToDouble(num -> Math.pow(num - average, 2))
-                    .sum() / (double) (numbers.size() - 1);
+    public int calcularMedia(List<Integer> lista) {
+        return calcularMediaRecursiva(lista, 0, 0);
+    }
 
-            return Math.sqrt(variance);
+    private int calcularMediaRecursiva(List<Integer> lista, int index, int suma) {
+        if (index == lista.size()) {
+            // Caso base: se han sumado todos los elementos
+            return suma / lista.size();
+        } else {
+            // Caso recursivo: sumar el elemento actual y avanzar al siguiente índice
+            int elementoActual = lista.get(index);
+            return calcularMediaRecursiva(lista, index + 1, suma + elementoActual);
         }
     }
 
 
+
     /** 6
+     * Calcula la desviación típica de una lista de enteros
+     * @param numbers - lista de enteros
+     * @return - la desviación típica de la lista
+     */
+
+
+
+    /** 7
      * Calcula la suma de los números pares de 0 a n
      * @param n - número entero mayor o igual que 2
      * @return - la suma de los números pares de 0 a n
      */
     public static int sumEven(int n) {
-        if (n < 2) { // base case
-            throw new IllegalArgumentException("El número debe ser mayor o igual que 2.");
-        } else if (n == 2) { // base case
+        if (n == 2) { // base case
             return 2;
         } else if (n % 2 == 0) { // even number
             return n + sumEven(n - 2); // recursive call with n-2
@@ -112,8 +115,8 @@ public class Mates {
     }
 
 
-    /** 7
-     * Calcula la suma de los números pares de una lista de enteros
+    /** 8
+     * Calcula la suma de los elementos pares de una lista de enteros
      * @param numbers - lista de enteros
      * @return - la suma de los números pares de la lista
      */
@@ -130,8 +133,8 @@ public class Mates {
     }
 
 
-    /** 8
-     * Obtiene la lista de los números pares de una lista de enteros
+    /** 9
+     * Obtiene la lista de los numeros pares de una lista de enteros
      * @param numbers - lista de enteros
      * @return - la lista de los números pares de la lista
      */
@@ -158,7 +161,7 @@ public class Mates {
 
 
 
-    /** 9
+    /** 10
      * Obtiene la lista de los números pares de 0 a n
      * @param n - número entero mayor o igual que 2
      * @return - la lista de los números pares de 0 a n
@@ -176,7 +179,7 @@ public class Mates {
     }
 
 
-    /** 10
+    /** 11
      * Calcula el producto escalar de dos vectores
      * @param list1 - lista de enteros
      * @param list2 - lista de enteros
@@ -198,7 +201,21 @@ public class Mates {
     }
 
 
-    /** 11
+    /** 12
+     * Calcula recursivamente el elemento n de la sucesión de Fibonacci
+     * @param n - número entero
+     * @return - el elemento n de la sucesión de Fibonacci
+     */
+    public static int fibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+
+
+    /** 13
      * Calcula el cociente entre el elemento n y el elemento n-1 de la sucesión de Fibonacci
      * @param n - número entero
      * @return - el cociente entre el elemento n y el elemento n-1 de la sucesión de Fibonacci
@@ -210,7 +227,11 @@ public class Mates {
             return (fibonacciQuotient(n - 1) + fibonacciQuotient(n - 2)) / fibonacciQuotient(n - 3);
         }
     }
+
+
     /**
+     * 15 - Relacion entre la sucesion de Fibonacci y la proporción áurea
+     *
      * La proporción áurea es una constante matemática que es aproximadamente igual a 1.61803398875, el valor obtenido
      * de la división de 1+(raiz cuadrada de)5 / 2.
      * La proporción áurea está estrechamente relacionada con la secuencia de Fibonacci y, de hecho,
