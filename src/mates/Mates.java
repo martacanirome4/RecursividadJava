@@ -10,9 +10,11 @@ public class Mates {
      * @param n - número entero
      * @return - la suma de los números de 0 a n
      */
-    public static int sumaN (int n) {
+    public static int sumaN (int n) throws IllegalArgumentException {
         // Elevar una excepción cuando haya una entrada no válida
-
+        if (n < 0) {
+            throw new IllegalArgumentException("El número debe ser mayor o igual que 0");
+        }
         if (n == 0) {
             return 0;
         } else {
@@ -26,7 +28,10 @@ public class Mates {
      * @param n - número entero
      * @return - el factorial de n
      */
-    public static int factorial (int n) {
+    public static int factorial (int n) throws IllegalArgumentException {
+        if (n < 0) {
+            throw new IllegalArgumentException("El número debe ser mayor o igual que 0");
+        }
         if (n == 0) {
             return 1;
         } else {
