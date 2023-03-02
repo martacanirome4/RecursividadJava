@@ -1,5 +1,19 @@
 ### Ejercicios de recursividad en Java
 Programa que contiene un conjunto de funciones de tipo recursivo (14), que permiten realizar una serie operaciones sobre tanto números enteros como sobre listas de enteros. Las funciones implementadas son:
+1. Suma de n numeros: sumaN
+2. Factorial de numero n: factorial
+3. Potencia n-esima de numero natural: potencia
+4. Suma de elementos de lista de numeros: sumList
+5. Media aritmetica de lista de numeros: calcularMedia
+6. Desviacion tipica de lista de numeros:
+7. Suma de numeros pares de 0 a n: sumEven
+8. Suma de elementos pares de lista de enteros: recursiveEvenSumList
+9. Obtener lista de numeros pares a partir de lista de enteros: getEvenNumbers
+10. Obtener lista de numeros pares de 0 a n: recursiveEvenListN
+11. Producto escalar de dos vectores: calculateDotProduct
+12. Elemento n de la sucesion de Fibonnaci: fibonacci
+13. Cociente entre el elemento n y el elemento n-1 de la sucesion de Fibonnaci: fibonacciQuotient
+14. (textual) Relacion entre la sucesion de Fibonacci y la proporción áurea
 
 
 ## Pre-requisitos
