@@ -1,5 +1,5 @@
 ### Ejercicios de recursividad en Java
-Programa que contiene un conjunto de funciones de tipo recursivo (14), que permiten realizar una serie operaciones sobre tanto números enteros como sobre listas de enteros.
+Programa que contiene un conjunto de funciones de tipo recursivo, que permiten realizar una serie operaciones sobre tanto números enteros como sobre listas de enteros.
 
 
 
@@ -17,7 +17,7 @@ El programa realiza las operaciones sobre estos 'inputs' y retorna e imprime el 
 
 ### Elevacion de exepciones
 Adicionalmente y sobre las funciones implementadas en la clase Mates, se ha llevado a cabo un estudio acerca de la elevación de exepciones, así como el control de flujo y el control de errores en Java, que en el programa se maneja desde la clase Main.
-Para el diseño de este se ha implementado un switch que contiene los 13 bloques de las 13 funciones existentes, cada uno de los casos del switch encapsula el codigo ejecutable dentro de un 'try', y captura las posibles expepciones con una serie de 'catch'.
+Para el diseño de este se ha implementado un switch que contiene los 13 bloques de las 13 funciones existentes, cada uno de los casos del switch encapsula el codigo ejecutable dentro de un 'try', y captura las posibles expepciones con un 'catch'.
 
 Jerarquia de exepciones en Java:
 ![java-exceptions-hierarchy-example](https://user-images.githubusercontent.com/50625677/222417419-5182b88e-4056-498f-bf3b-75873183e707.png)
