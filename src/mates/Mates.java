@@ -47,7 +47,9 @@ public class Mates {
      * @return - el resultado de elevar n a la p, le pasaremos como valor también n
      */
     public static int potencia (int n, int p) {
-
+        if (n < 0) {
+            throw new IllegalArgumentException("El número debe ser mayor o igual que 0");
+        }
         if (p == 0) {
             return 1;
         } else {
@@ -80,6 +82,9 @@ public class Mates {
      * @return suma - la media de los elementos de la lista
      */
     public int calcularMedia(List<Integer> lista) {
+        if (lista.size() == 0) {
+            throw new IllegalArgumentException("La lista no puede estar vacía");
+        }
         return calcularMediaRecursiva(lista, 0, 0);
     }
 
@@ -110,6 +115,9 @@ public class Mates {
      * @return - la suma de los números pares de 0 a n
      */
     public static int sumEven(int n) {
+        if (n <= 0) {
+            throw new IllegalArgumentException("El número debe ser mayor o igual que 0");
+        }
         if (n == 2) { // base case
             return 2;
         } else if (n % 2 == 0) { // even number
@@ -145,7 +153,7 @@ public class Mates {
      */
     public static List<Integer> getEvenNumbers(List<Integer> list) {
         if (list.size() < 2) {
-            throw new IllegalArgumentException("La lista debe contener al menos 2 elementos.");
+            throw new IllegalArgumentException("La lista debe contener al menos 2 elementos");
         } else if (list.size() == 2) { // caso base
             if (list.get(0) % 2 == 0) {
                 List<Integer> sol = Arrays.asList(0);
@@ -172,8 +180,8 @@ public class Mates {
      * @return - la lista de los números pares de 0 a n
      */
     public static List<Integer> recursiveEvenListN(int n) {
-        if (n < 2) {
-            throw new IllegalArgumentException("La lista no puede estar vacía");
+        if (n < 0) {
+            throw new IllegalArgumentException("El número debe ser mayor o igual que 0");
         } else {
             List<Integer> evenList = recursiveEvenListN(n - 2);
             if (n % 2 == 0) {
@@ -191,6 +199,13 @@ public class Mates {
      * @return - el producto escalar de los dos vectores
      */
     public static int calculateDotProduct(List<Integer> list1, List<Integer> list2) {
+        // excepciones
+        if (list1.size() < 2) {
+            throw new IllegalArgumentException("La lista debe contener al menos 2 elementos");
+        }
+        if (list2.size() < 2) {
+            throw new IllegalArgumentException("La lista debe contener al menos 2 elementos");
+        }
         return calculateDotProductRecursive(list1, list2, 0, 0, 0);
     }
     public static int calculateDotProductRecursive(List<Integer> list1, List<Integer> list2, int index, int product, int sum) {
@@ -212,6 +227,9 @@ public class Mates {
      * @return - el elemento n de la sucesión de Fibonacci
      */
     public static int fibonacci(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("El número debe ser mayor o igual que 0");
+        }
         if (n <= 1) {
             return n;
         } else {
@@ -226,6 +244,9 @@ public class Mates {
      * @return - el cociente entre el elemento n y el elemento n-1 de la sucesión de Fibonacci
      */
     public static double fibonacciQuotient(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("El número debe ser mayor o igual que 0");
+        }
         if (n <= 1) {
             return n;
         } else {
