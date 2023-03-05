@@ -244,14 +244,14 @@ public class Mates {
      * @param n - número entero
      * @return - el elemento n de la sucesión de Fibonacci
      */
-    public static int fibonacci(int n) {
-        if (n < 0) {
+    public static double fibonacci(int n) {
+        if (n <= 0) {
             throw new IllegalArgumentException("El número debe ser mayor o igual que 0");
         }
-        if (n <= 1) {
-            return n;
+        if (n == 1 || n == 2) {
+            return 1;
         } else {
-            return fibonacci(n - 1) + fibonacci(n - 2);
+            return fibonacci(n-1) + fibonacci(n-2);
         }
     }
 
@@ -262,19 +262,19 @@ public class Mates {
      * @return - el cociente entre el elemento n y el elemento n-1 de la sucesión de Fibonacci
      */
     public static double fibonacciQuotient(int n) {
-        if (n < 0) {
+        if (n <= 0) {
             throw new IllegalArgumentException("El número debe ser mayor o igual que 0");
         }
-        if (n <= 1) {
-            return n;
+        if (n == 1 || n == 2) {
+            return 1.0;
         } else {
-            return (fibonacciQuotient(n - 1) + fibonacciQuotient(n - 2)) / fibonacciQuotient(n - 3);
+            return fibonacci(n-1) / fibonacci(n-2);
         }
     }
 
 
     /**
-     * 15 - Relacion entre la sucesion de Fibonacci y la proporción áurea
+     * 14 - Relacion entre la sucesion de Fibonacci y la proporción áurea
      *
      * La proporción áurea es una constante matemática que es aproximadamente igual a 1.61803398875, el valor obtenido
      * de la división de 1+(raiz cuadrada de)5 / 2.

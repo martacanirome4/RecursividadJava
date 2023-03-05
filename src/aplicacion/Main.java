@@ -10,7 +10,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int opcion;
-        System.out.println("Elija una opción introduciendo un valor del 1 al 14: ");
+        System.out.println("Elija una opción introduciendo un valor del 1 al 13: ");
         opcion = scanner.nextInt();
 
         switch (opcion) {
@@ -209,6 +209,69 @@ public class Main {
                 } catch (Exception e) {
                     System.out.println("Error: Input invalido. Por favor introduzca un numero entero.");
                 }
+                break;
+
+            case 11:
+                try{
+                    System.out.print("Introduzca el tamaño que desea para las listas: ");
+                    int size = scanner.nextInt();
+                    List<Integer> lista1 = new ArrayList<Integer>(size);
+
+                    System.out.println("Introduzca los numeros que desea introducir en la primera lista: ");
+                    for (int i = 0; i < size; i++) {
+                        int num = scanner.nextInt();
+                        lista1.add(num);
+                    }
+
+                    List<Integer> lista2 = new ArrayList<Integer>(size);
+                    System.out.println("Introduzca los numeros que desea introducir en la segunda lista: ");
+                    for (int i = 0; i < size; i++) {
+                        int num = scanner.nextInt();
+                        lista2.add(num);
+                    }
+
+                    int sol11 = Mates.calculateDotProduct(lista1, lista2);
+                    System.out.println("El producto escalar de las dos listas es: " + sol11);
+
+                } catch (IllegalArgumentException e) {
+                    // se detecta error en la funcion sumList
+                    System.out.println("Error: " + e.getMessage());
+                } catch (Exception e) {
+                    // se detecta error en la entrada de datos
+                    System.out.println("Error: Input invalido. Por favor introduzca un numero entero.");
+                }
+                break;
+
+            case 12:
+                try{
+                    System.out.println("Introduzca un número entero: ");
+                    int n = scanner.nextInt();
+
+                    double sol12 = Mates.fibonacci(n);
+                    System.out.println("El elemento " + n + " de la sucesion de Fibonacci es: " + sol12);
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Error: " + e.getMessage());
+                } catch (Exception e) {
+                    System.out.println("Error: Input invalido. Por favor introduzca un numero entero.");
+                }
+                break;
+
+            case 13:
+                try{
+                    System.out.println("Introduzca un número entero: ");
+                    int n = scanner.nextInt();
+
+                    double sol13 = Mates.fibonacciQuotient(n);
+                    System.out.println("El cociente entre el elemento " + n + " y el elemento " + (n-1) +
+                            " de la sucesion de Fibonacci es: " + sol13);
+                }
+                catch (IllegalArgumentException e) {
+                    System.out.println("Error: " + e.getMessage());
+                } catch (Exception e) {
+                    System.out.println("Error: Input invalido. Por favor introduzca un numero entero.");
+                }
+                break;
+
         }
     }
 }
