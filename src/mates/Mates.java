@@ -1,6 +1,5 @@
 package mates;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import static java.lang.Math.*;
 
 public class Mates {
@@ -50,6 +49,9 @@ public class Mates {
         if (n < 0) {
             throw new IllegalArgumentException("El número debe ser mayor o igual que 0");
         }
+        if (p < 0) {
+            throw new IllegalArgumentException("El valor de la potencia debe ser mayor o igual que 0");
+        }
         if (p == 0) {
             return 1;
         } else {
@@ -65,7 +67,7 @@ public class Mates {
      */
     public static int sumList (List<Integer> numbers) {
         if (numbers.size() == 0) {
-            throw new IllegalArgumentException("La lista no puede estar vacía");
+            return 0;
         }
         else {
             int lastNumber = numbers.get(numbers.size() - 1);
@@ -81,14 +83,14 @@ public class Mates {
      * @param numbers - lista de enteros
      * @return suma - la media de los elementos de la lista
      */
-    public int calcularMedia(List<Integer> lista) {
+    public static int calcularMedia(List<Integer> lista) {
         if (lista.size() == 0) {
             throw new IllegalArgumentException("La lista no puede estar vacía");
         }
         return calcularMediaRecursiva(lista, 0, 0);
     }
 
-    private int calcularMediaRecursiva(List<Integer> lista, int index, int suma) {
+    private static int calcularMediaRecursiva(List<Integer> lista, int index, int suma) {
         if (index == lista.size()) {
             // Caso base: se han sumado todos los elementos
             return suma / lista.size();
@@ -103,9 +105,25 @@ public class Mates {
 
     /** 6
      * Calcula la desviación típica de una lista de enteros
-     * @param numbers - lista de enteros
+     * @param lista - lista de enteros
      * @return - la desviación típica de la lista
      */
+    public static double calcularDesviacionEstandar(List<Integer> lista) {
+        int n = lista.size();
+
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 0;
+        } else {
+            double media = calcularMedia(lista);
+            double sumatoria = 0;
+            for (int i = 0; i < n; i++) {
+                sumatoria += Math.pow(lista.get(i) - media, 2);
+            }
+            return Math.sqrt(sumatoria / (n - 1));
+        }
+    }
 
 
 
@@ -135,7 +153,7 @@ public class Mates {
      */
     public static int recursiveEvenSumList(List<Integer> numbers) {
         if (numbers.size() == 0) {
-            throw new IllegalArgumentException("La lista no puede estar vacía");
+            return 0;
         }
         else {
             int lastNumber = numbers.get(numbers.size() - 1);
@@ -152,9 +170,7 @@ public class Mates {
      * @return - la lista de los números pares de la lista
      */
     public static List<Integer> getEvenNumbers(List<Integer> list) {
-        if (list.size() < 2) {
-            throw new IllegalArgumentException("La lista debe contener al menos 2 elementos");
-        } else if (list.size() == 2) { // caso base
+        if (list.size() == 2) { // caso base
             if (list.get(0) % 2 == 0) {
                 List<Integer> sol = Arrays.asList(0);
                 return sol;
@@ -177,18 +193,20 @@ public class Mates {
     /** 10
      * Obtiene la lista de los números pares de 0 a n
      * @param n - número entero mayor o igual que 2
-     * @return - la lista de los números pares de 0 a n
+     * @return list - la lista de los números pares de 0 a n
      */
-    public static List<Integer> recursiveEvenListN(int n) {
-        if (n < 0) {
-            throw new IllegalArgumentException("El número debe ser mayor o igual que 0");
-        } else {
-            List<Integer> evenList = recursiveEvenListN(n - 2);
-            if (n % 2 == 0) {
-                evenList.add(n);
-            }
-            return evenList;
+    public static List<Integer> evenNumbers(int n) {
+        List<Integer> list = new ArrayList<>();
+        if (n == 0) {
+            return list;
         }
+        if (n % 2 == 0) {
+            list.addAll(evenNumbers(n - 2));
+            list.add(n);
+        } else {
+            list.addAll(evenNumbers(n - 1));
+        }
+        return list;
     }
 
 
