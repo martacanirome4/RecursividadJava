@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1c761389-049b-42a0-b699-296d4e746414" name="Changes" comment="Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/aplicacion/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/aplicacion/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aplicacion/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aplicacion/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +52,21 @@
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="RecursividadJava" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="RecursividadJava" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -81,6 +94,8 @@
       <workItem from="1678014283392" duration="625000" />
       <workItem from="1678015294807" duration="552000" />
       <workItem from="1678016555075" duration="8870000" />
+      <workItem from="1679137927521" duration="349000" />
+      <workItem from="1680249460321" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1675796946543</created>
